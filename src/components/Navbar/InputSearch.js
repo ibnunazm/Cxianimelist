@@ -5,28 +5,37 @@ import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
 const InputSearch = () => {
-    const searchRef = useRef()
-    const router = useRouter()
-    const handleSearch = (event) => {
-        event.preventDefault()
-        const keyword = searchRef.current.value
-        router.push(`/search/${keyword}`)
 
+  const searchRef = useRef();
+  const router = useRouter();
+
+  const handleSearch = (event) => {
+    let keyword = searchRef.current.value;
+
+    if(!keyword) return;
+
+    if(event.key === "Enter" || event.type === "click"){
+      event.preventDefault();
+      router.push(`/search/${keyword}`);
     }
+  };
 
   return (
     <div className="relative">
       <input
         type="text"
         placeholder="Search Anime"
-        className="px-2 h-[35px] my-auto md:w-[400px] w-full rounded"
+        className="px-2 md:h-[35px] h-[30px] my-auto md:w-[400px] w-full rounded"
         ref={searchRef}
+        onKeyDown={handleSearch}
       />
       <button className="absolute top-[3px] end-1.5" onClick={handleSearch}>
-        <MagnifyingGlass size={28}/>
+        <MagnifyingGlass size={28} />
       </button>
     </div>
   );
 };
 
 export default InputSearch;
+
+

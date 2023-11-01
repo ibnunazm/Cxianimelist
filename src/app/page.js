@@ -7,7 +7,7 @@ const Page = async () => {
   return (
     <>
       {/* Anime Populer */}
-      <section className="bg-slate-200 relative py-4 overflow-x-hidden border-b-slate-800 border-b-2 shadow-xl">
+      <section className="bg-slate-300 pt-4 relative overflow-x-hidden border-b-slate-800 border-b-2 shadow-xl">
         <Header
           title={"Most Popular"}
           linkHref={"/popular"}
