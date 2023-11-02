@@ -30,7 +30,7 @@ const InputSearch = () => {
         onKeyDown={handleSearch}
       />
       <button className="absolute top-[3px] end-1.5" onClick={handleSearch}>
-        <MagnifyingGlass size={28} />
+        <MagnifyingGlass size={28} className="hover:text-indigo-500"/>
       </button>
     </div>
   );
