@@ -1,6 +1,10 @@
 import AnimeListSwiper from "@/components/AnimeListSwiper";
 import Header from "@/components/AnimeListSwiper/Header";
-import { getAnimeResponse, getNestedAnimeResponse, reproduce} from "../libs/api-libs";
+import {
+  getAnimeResponse,
+  getNestedAnimeResponse,
+  reproduce,
+} from "../libs/api-libs";
 import AnimeListScroller from "@/components/AnimeListScroller";
 
 const Page = async () => {
@@ -9,8 +13,7 @@ const Page = async () => {
     "recommendations/anime",
     "entry"
   );
-  // recommendationAnime = { data: recommendationAnime.slice(1, 50) };
-  recommendationAnime = reproduce(recommendationAnime, 50);
+  recommendationAnime = reproduce(recommendationAnime, 24);
 
   return (
     <>
@@ -28,11 +31,7 @@ const Page = async () => {
           linkHref={"/recommendation"}
           linkTitle={"View More"}
         />
-        <div className="pb-2 bg-slate-600">
-          <div className="relative px-4 overflow-hidden bg-slate-300 max-h-[1429px]">
-            <AnimeListScroller api={recommendationAnime} />
-          </div>
-        </div>
+        <AnimeListScroller api={recommendationAnime} />
       </section>
     </>
   );

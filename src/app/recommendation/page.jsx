@@ -24,11 +24,7 @@ const Page = () => {
   return (
     <>
       <HeaderMenu title={`Recommendation Anime`} />
-      <div className="pb-2 bg-slate-600">
-        <div className="relative px-4 overflow-hidden bg-slate-300 max-h-[8035px]">
-          <AnimeList api={recommendationAnime} />
-        </div>
-      </div>
+      <AnimeList api={recommendationAnime} />
     </>
   );
 };

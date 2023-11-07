@@ -24,11 +24,7 @@ const Page = () => {
   return (
     <>
       <HeaderMenu title={`Most Popular Anime #${page}`} />
-      <div className="pb-2 bg-slate-600">
-        <div className="relative px-4 overflow-hidden bg-slate-300 max-h-[1429px]">
-          <AnimeList api={topAnime} />
-        </div>
-      </div>
+      <AnimeList api={topAnime} />
       <Pagination
         page={page}
         lastPage={topAnime.pagination?.last_visible_page}
