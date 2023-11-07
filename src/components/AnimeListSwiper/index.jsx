@@ -5,7 +5,7 @@ import Swiper from "swiper";
 import Image from "next/image";
 import Link from "next/link";
 
-const AnimeList = ({ api }) => {
+const AnimeListSwiper = ({ api }) => {
   const swiperRef = useRef(null);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const AnimeList = ({ api }) => {
   };
 
   return (
-    <div ref={swiperRef} className="swiper-container relative px-4 overflow-hidden bg-slate-300">
+    <div ref={swiperRef} className="swiper-container relative px-4 overflow-hidden bg-slate-300 pb-5">
       <div className="pt-2 pb-5 flex swiper-wrapper bg-slate-300">
         {api.data?.map((data) => (
           <div key={data.mal_id} className="swiper-slide">
@@ -58,4 +58,4 @@ const AnimeList = ({ api }) => {
   );
 };
 
-export default AnimeList;
+export default AnimeListSwiper;

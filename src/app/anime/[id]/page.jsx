@@ -1,4 +1,4 @@
-import { getAnimeResponse } from "@/app/libs/api-libs";
+import { getAnimeResponse } from "@/libs/api-libs";
 import VideoPlayer from "@/components/Utilities/VideoPlayer";
 import Image from "next/image";
 
@@ -36,7 +36,7 @@ const Page = async ({ params: { id } }) => {
           <p>{anime.data.popularity}</p>
         </div>
       </div>
-      
+
       <div className="flex lg:flex-nowrap flex-wrap text-slate-800 w-full">
         <Image
           src={anime.data.images.webp.image_url}
@@ -46,7 +46,9 @@ const Page = async ({ params: { id } }) => {
           className="w-10/12 max-w-[500px] max-h-[700px] min-h-[400px] min-w-[300px] px-4 pt-6 h-auto mx-auto rounded-xl"
         />
         <div className="flex flex-col w-full gap-4 px-6 py-6">
-          <p className="lg:text-xl md:text-lg sm:text-md text-sm w-full text-left font-bold">Synopsis :</p>
+          <p className="lg:text-xl md:text-lg sm:text-md text-sm w-full text-left font-bold">
+            Synopsis :
+          </p>
           <p className="lg:text-xl md:text-lg sm:text-md text-sm w-full text-justify">
             {anime.data.synopsis}
           </p>
